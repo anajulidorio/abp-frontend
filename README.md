@@ -28,7 +28,7 @@ O ProJur Municipal organiza tudo isso em um único lugar, tornando o trabalho do
 * **Consulta e Acompanhamento de Processos:** Busca e visualização de processos em andamento com nome do contribuinte, número, valor e situação
 
 ## Quem são nossos clientes?
-Nossos clientes são prefeituras de pequeno e médio porte, departamentos jurídicos municipais, advogados e Escritórios de advocacia. Eles se interessam pelo nosso produto porque precisam de uma solução específica para o problema de controle de cobranças municipais, algo que sistemas genéricos não resolvem adequadamente.
+Nossos clientes são prefeituras de pequeno e médio porte, departamentos jurídicos municipais, advogados e escritórios de advocacia. Eles se interessam pelo nosso produto porque precisam de uma solução específica para o problema de controle de cobranças municipais, algo que sistemas genéricos não resolvem adequadamente.
 
 ## Tecnologias utilizadas:
 * HTML
