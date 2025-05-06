@@ -1,4 +1,4 @@
-# ProJur - Gerenciador de Processos Tributários Municipais
+# 🏛️ ProJur - Gerenciador de Processos Tributários Municipais
 
 ## Equipe:
 * Ana Julia Lidório
