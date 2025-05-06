@@ -21,7 +21,7 @@ Muitas prefeituras têm dificuldade para controlar a quantidade de processos de 
 O ProJur Municipal organiza tudo isso em um único lugar, tornando o trabalho dos advogados da prefeitura e dos funcionários públicos muito mais fácil e eficiente.
 
 ## Estrutura do projeto:
-* **Tela de Login:** Acesso seguro para funcionários autorizados
+* **Tela de Login:** Acesso seguro para usuários cadastrados
 * **Painel Principal:** Tela inicial com visão geral do sistema, exibindo um resumo dos processos ativos e outras informações gerais
 * **Cadastro de Cidadãos:** Tela para cadastrar, listar, editar e consultar contribuintes, contendo seus dados pessoais, documentos e informações de contato
 * **Cadastro de Processos:** Tela para cadastrar, listar, editar e gerenciar processos tributários vinculados aos cidadãos já cadastrados, incluindo valores devidos e documentos relacionados
