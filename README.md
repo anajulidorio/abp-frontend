@@ -25,7 +25,7 @@ O ProJur Municipal organiza tudo isso em um único lugar, tornando o trabalho do
 * **Painel Principal:** Tela inicial com visão geral do sistema, exibindo um resumo dos processos ativos e outras informações gerais
 * **Cadastro de Cidadãos:** Tela para cadastrar, listar, editar e consultar contribuintes, contendo seus dados pessoais, documentos e informações de contato
 * **Cadastro de Processos:** Tela para cadastrar, listar, editar e gerenciar processos tributários vinculados aos cidadãos já cadastrados, incluindo valores devidos e documentos relacionados
-* **Consulta e acompanhamento de Processos:** Busca e visualização de processos em andamento com nome do contribuinte, número, valor e situação
+* **Consulta e Acompanhamento de Processos:** Busca e visualização de processos em andamento com nome do contribuinte, número, valor e situação
 
 ## Quem são nossos clientes?
 Nossos clientes são prefeituras de pequeno e médio porte, departamentos jurídicos municipais, advogados e Escritórios de advocacia. Eles se interessam pelo nosso produto porque precisam de uma solução específica para o problema de controle de cobranças municipais, algo que sistemas genéricos não resolvem adequadamente.
