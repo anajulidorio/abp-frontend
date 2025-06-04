@@ -1,6 +1,6 @@
 import './App.css';
-import CadastroProcesso from './CadastroProcesso';
-import CadastroCidadao from './CadastroCidadao';
+import CadastroProcesso from './routes/CadastroProcesso';
+import CadastroCidadao from './routes/CadastroCidadao';
 
 function App() {
   return (
