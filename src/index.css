@@ -24,10 +24,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
@@ -65,4 +64,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.pagina-layout {
+  min-height: 100vh;
+}
+
+.conteudo-principal {
+  padding: 1rem;
 }
