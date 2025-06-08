@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagina-cadastro,
+.pagina-processo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-cadastro,
+.titulo-processo,
+.subtitulo-cidadaos,
+.subtitulo-processo {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.botao-novo-cidadao,
+.botao-novo-processo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.formulario-cidadao,
+.formulario-processo {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.campo-formulario {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.2s ease;
+}
+
+.campo-formulario:hover {
+  border-color: #999;
+}
+
+.campo-formulario:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.tabela-cidadaos,
+.tabela-processos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-cidadaos th,
+.tabela-cidadaos td,
+.tabela-processos th,
+.tabela-processos td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabela-cidadaos thead,
+.tabela-processos thead {
+  background-color: #f2f2f2;
+}
+
+.subtitulo-cidadaos,
+.subtitulo-processo {
+  margin-bottom: 8px;
+}
