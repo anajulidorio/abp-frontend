@@ -5,7 +5,6 @@ export default function Menu() {
     <div>
       <nav className="menu">
         <Link to="/">Início</Link>
-        <Link to="/login">Login</Link>
         <Link to="/cadastro-cidadao">Cadastrar Cidadão</Link>
         <Link to="/cadastro-processo">Cadastrar Processo</Link>
         <Link to="/consulta">Consulta de Processos</Link>
