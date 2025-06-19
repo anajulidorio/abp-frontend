@@ -32,14 +32,14 @@ function Login({ aoAvancar }) {
             type="text"
             placeholder="Digite seu login..."
             value={login}
-            onChange={(e) => setLogin(e.target.value)}
+            onChange={(e) => setLogin(e.target.value)} required
           />
           <label>Senha:</label>
           <input
             type="password"
             placeholder="Digite sua senha..."
             value={senha}
-            onChange={(e) => setSenha(e.target.value)}
+            onChange={(e) => setSenha(e.target.value)} required
           />
           <button type="submit">AVANÇAR</button>
         </form>
