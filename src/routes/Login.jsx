@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import '../routes/Login.css';
 
-function Login() {
+function Login({ aoAvancar }) {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Login: ${login}\nSenha: ${senha}`);
+
+    if (login === 'admin' && senha === '1234') {
+      aoAvancar({ login, senha });
+    } else {
+      alert('Login ou senha incorretos!');
+    }
   };
 
   return (
