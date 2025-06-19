@@ -15,13 +15,13 @@ export default function PaginaInicial() {
   }, []);
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard">
       <h1>Dashboard</h1>
 
-      <section className="dashboard-section">
-        <h2 className="section-title">Informações Gerais</h2>
-        <div className="card-grid">
-          <div className="card active-clients">
+      <div className="info">
+        <h2>Informações Gerais</h2>
+        <div className="cards-info">
+          <div className="card card-cidad">
             <div className="card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,13 +40,13 @@ export default function PaginaInicial() {
                 <path d="M22 20c0 1.33-2.09 3-4 3s-4-1.67-4-3m4-10a4 4 0 0 0-4-4s-4 1.76-4 4"></path>
               </svg>
             </div>
-            <div className="card-content">
-              <span className="card-value">{totalCidadaos}</span>
-              <span className="card-label">Cidadãos Cadastrados</span>
+            <div className="card-conteudo">
+              <span className="card-valor">{totalCidadaos}</span>
+              <span className="card-legenda">Cidadãos Cadastrados</span>
             </div>
           </div>
 
-          <div className="card active-processes">
+          <div className="card card-proc">
             <div className="card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,13 +64,13 @@ export default function PaginaInicial() {
                 <path d="M2 14h20v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7Z"></path>
               </svg>
             </div>
-            <div className="card-content">
-              <span className="card-value">{processosAtivos}</span>
-              <span className="card-label">Processos Ativos</span>
+            <div className="card-conteudo">
+              <span className="card-valor">{processosAtivos}</span>
+              <span className="card-legenda">Processos Ativos</span>
             </div>
           </div>
 
-          <div className="card upcoming-deadlines">
+          <div className="card card-prazo">
             <div className="card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,14 +92,14 @@ export default function PaginaInicial() {
                 <path d="m18 16 3 3 1-1"></path>
               </svg>
             </div>
-            <div className="card-content">
-              <span className="card-value">{prazosProximos}</span>
-              <span className="card-label">Prazos Próximos</span>
+            <div className="card-conteudo">
+              <span className="card-valor">{prazosProximos}</span>
+              <span className="card-legenda">Prazos Próximos</span>
             </div>
           </div>
 
-          <div className="card today-publications">
-            <div className="card-icon">
+          <div className="card card-pub">
+            <div className="card-icone">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -118,17 +118,17 @@ export default function PaginaInicial() {
                 <path d="M14 12h3"></path>
               </svg>
             </div>
-            <div className="card-content">
-              <span className="card-value">{publicacoesHoje}</span>
-              <span className="card-label">Publicações Hoje</span>
+            <div className="card-conteudo">
+              <span className="card-valor">{publicacoesHoje}</span>
+              <span className="card-legenda">Publicações Hoje</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="dashboard-section">
-        <h2 className="section-title">Agenda e Prazos Recentes</h2>
-        <div className="info-box">
+      <div className="agenda">
+        <h2>Agenda e Prazos Recentes</h2>
+        <div className="agenda-topico">
           <p>Não há prazos críticos para os próximos 7 dias.</p>
           <p>Últimas 5 movimentações processuais:</p>
           <ul>
@@ -139,7 +139,7 @@ export default function PaginaInicial() {
             </li>
           </ul>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
