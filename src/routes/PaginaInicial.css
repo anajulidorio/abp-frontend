@@ -1,0 +1,159 @@
+.dashboard {
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  background-color: #f0f2f5;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 44.8px;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.info {
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.agenda {
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.info h2,
+.agenda h2 {
+  font-size: 28.8px;
+  color: #34495e;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.cards-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon svg {
+  width: 40px;
+  height: 40px;
+  color: #5b6e82;
+}
+
+.card-conteudo {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-valor {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.card-legenda {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+.card-cidad {
+  background-color: #e0f2f7;
+}
+.card-cidad .card-icon svg {
+  color: #3498db;
+}
+.card-cidad .card-valor {
+  color: #2980b9;
+}
+
+.card-proc {
+  background-color: #e6e6fa;
+}
+.card-proc .card-icon svg {
+  color: #8e44ad;
+}
+.card-proc .card-valor {
+  color: #9b59b6;
+}
+
+.card-prazo {
+  background-color: #ffe0e0;
+}
+.card-prazo .card-icon svg {
+  color: #e74c3c;
+}
+.card-prazo .card-valor {
+  color: #c0392b;
+}
+
+.card-pub {
+  background-color: #fff2e0;
+}
+.card-pub .card-icon svg {
+  color: #f39c12;
+}
+.card-pub .card-valor {
+  color: #e67e22;
+}
+
+.agenda-topico {
+  background-color: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #5b6e82;
+  border-radius: 8px;
+  padding: 20px;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 20px;
+}
+
+.agenda-topico ul {
+  margin-left: 20px;
+  padding: 0;
+}
+
+.agenda-topico li {
+  margin-bottom: 5px;
+}
