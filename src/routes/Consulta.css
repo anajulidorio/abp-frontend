@@ -8,8 +8,9 @@
 .titulo-consulta {
   text-align: center;
   color: #2c3e50;
-  font-size: 32px;
-  margin-bottom: 16px;
+  font-size: 35.2px;
+  margin-bottom: 24px;
+  font-weight: bold; 
 }
 
 .texto-consulta {
