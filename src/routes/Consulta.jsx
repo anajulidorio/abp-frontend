@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../routes/Consulta.css';
 
 const contribuintes = [
   { id: 1, nome: 'João Silva' },
@@ -59,15 +60,21 @@ export default function Consulta() {
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
       <h1>Consultas</h1>
-      <p>Consulte processos por nome do contribuinte ou número do processo.</p>
+      <div className="texto-consulta">
+        <p>
+          Consulte processos por nome do contribuinte ou número do processo.
+        </p>
+      </div>
 
-      <input
-        type="text"
-        placeholder="Digite nome ou número para buscar..."
-        value={filtro}
-        onChange={(e) => setFiltro(e.target.value)}
-        style={{ padding: '8px', width: '300px', marginBottom: '20px' }}
-      />
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Digite nome ou número para buscar..."
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+          className="input-busca"
+        />
+      </div>
 
       <table
         border="1"
