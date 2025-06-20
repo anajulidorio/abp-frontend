@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 import '../routes/Cadastros.css';
+import { jsPDF } from 'jspdf';
+
+function gerarPdfTeste() {
+  const doc = new jsPDF();
+  doc.text('teste', 10, 10);
+  return doc.output('blob');
+}
 
 const CadastroProcesso = () => {
   const contribuintes = [
@@ -13,41 +20,41 @@ const CadastroProcesso = () => {
     { id: 6, nome: 'Fernanda Lima' },
   ];
 
-  const processosPadrao = [
+const processosPadrao = [
     {
       contribuinteId: '1',
       numero: '2023-001',
       valor: '1500',
       situacao: 'Em andamento',
-      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
+      arquivo: gerarPdfTeste(),
     },
     {
       contribuinteId: '2',
       numero: '2023-002',
       valor: '3000',
       situacao: 'Concluído',
-      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
+      arquivo: gerarPdfTeste(),
     },
     {
       contribuinteId: '4',
       numero: '2023-003',
       valor: '2200',
       situacao: 'Suspenso',
-      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
+      arquivo: gerarPdfTeste(),
     },
     {
       contribuinteId: '5',
       numero: '2023-004',
       valor: '1800',
       situacao: 'Em andamento',
-      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
+      arquivo: gerarPdfTeste(),
     },
     {
       contribuinteId: '6',
       numero: '2023-005',
       valor: '2500',
       situacao: 'Concluído',
-      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
+      arquivo: gerarPdfTeste(),
     },
   ];
 
