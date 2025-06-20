@@ -1,0 +1,75 @@
+.pagina-consulta {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-family: sans-serif;
+}
+
+.titulo-consulta {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.texto-consulta {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.input-busca {
+  padding: 10px;
+  width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-busca:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+th,
+td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 10px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+td[colspan='4'] {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
