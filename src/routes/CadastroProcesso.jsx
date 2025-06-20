@@ -19,38 +19,42 @@ const CadastroProcesso = () => {
       numero: '2023-001',
       valor: '1500',
       situacao: 'Em andamento',
+      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
     },
     {
       contribuinteId: '2',
       numero: '2023-002',
       valor: '3000',
       situacao: 'Concluído',
+      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
     },
     {
       contribuinteId: '4',
       numero: '2023-003',
       valor: '2200',
       situacao: 'Suspenso',
+      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
     },
     {
       contribuinteId: '5',
       numero: '2023-004',
       valor: '1800',
       situacao: 'Em andamento',
+      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
     },
     {
       contribuinteId: '6',
       numero: '2023-005',
       valor: '2500',
       situacao: 'Concluído',
+      arquivo: new Blob(['teste'], { type: 'application/pdf' }),
     },
   ];
 
-  // Inicializa a lista com os processos padrão (sem usar localStorage)
   const [listaProcessos, setListaProcessos] = useState(processosPadrao);
-
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [indiceEdicao, setIndiceEdicao] = useState(null);
+  const [arquivo, setArquivo] = useState(null);
   const [processo, setProcesso] = useState({
     contribuinteId: '',
     numero: '',
@@ -75,23 +79,27 @@ const CadastroProcesso = () => {
       return;
     }
 
+    const novoProcesso = { ...processo, arquivo };
+
     if (indiceEdicao !== null) {
       const listaAtualizada = [...listaProcessos];
-      listaAtualizada[indiceEdicao] = processo;
+      listaAtualizada[indiceEdicao] = novoProcesso;
       setListaProcessos(listaAtualizada);
       alert('Processo editado com sucesso!');
     } else {
-      setListaProcessos([...listaProcessos, processo]);
+      setListaProcessos([...listaProcessos, novoProcesso]);
       alert('Processo cadastrado com sucesso!');
     }
 
     setProcesso({ contribuinteId: '', numero: '', valor: '', situacao: '' });
+    setArquivo(null);
     setMostrarFormulario(false);
     setIndiceEdicao(null);
   }
 
   function editarProcesso(index) {
     setProcesso(listaProcessos[index]);
+    setArquivo(listaProcessos[index].arquivo || null);
     setIndiceEdicao(index);
     setMostrarFormulario(true);
   }
@@ -118,6 +126,7 @@ const CadastroProcesso = () => {
               valor: '',
               situacao: '',
             });
+            setArquivo(null);
             setIndiceEdicao(null);
           }}
         />
@@ -171,6 +180,13 @@ const CadastroProcesso = () => {
             <option value="Suspenso">Suspenso</option>
           </select>
 
+          <input
+            type="file"
+            accept="application/pdf"
+            className="campo-formulario"
+            onChange={(e) => setArquivo(e.target.files[0])}
+          />
+
           <Button
             type="submit"
             label={indiceEdicao !== null ? 'Salvar Edição' : 'Salvar Processo'}
@@ -203,6 +219,17 @@ const CadastroProcesso = () => {
                 <td>
                   <Button label="Editar" onClick={() => editarProcesso(i)} />
                   <Button label="Excluir" onClick={() => excluirProcesso(i)} />
+                  <Button
+                    label="Ver PDF"
+                    onClick={() => {
+                      if (proc.arquivo) {
+                        const url = URL.createObjectURL(proc.arquivo);
+                        window.open(url, '_blank');
+                      } else {
+                        alert('Nenhum arquivo disponível.');
+                      }
+                    }}
+                  />
                 </td>
               </tr>
             );
