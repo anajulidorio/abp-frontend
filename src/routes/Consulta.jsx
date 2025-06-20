@@ -117,7 +117,7 @@ export default function Consulta() {
                 <tr key={i}>
                   <td>{pessoa ? pessoa.nome : '-'}</td>
                   <td>{proc.numero}</td>
-                  <td>{parseFloat(proc.valor).toFixed(2)}</td>
+                  <td>R$ {parseFloat(proc.valor).toFixed(2)}</td>
                   <td>{proc.situacao}</td>
                 </tr>
               );
