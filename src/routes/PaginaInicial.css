@@ -1,14 +1,12 @@
 .dashboard {
   padding: 0;
-  font-family: 'Inter', sans-serif;
   width: 100%;
   background-color: #f0f2f5;
-  min-height: calc(100vh - 60px);
   box-sizing: border-box;
 }
 
 h1 {
-  font-size: 44.8px;
+  font-size: 45px;
   color: #2c3e50;
   text-align: center;
   margin-bottom: 40px;
@@ -43,7 +41,7 @@ h1 {
 
 .info h2,
 .agenda h2 {
-  font-size: 28.8px;
+  font-size: 28px;
   color: #34495e;
   margin-bottom: 25px;
   border-bottom: 2px solid #e0e0e0;
@@ -54,6 +52,7 @@ h1 {
 .cards-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
   gap: 25px;
 }
 
@@ -68,6 +67,8 @@ h1 {
   gap: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  cursor: pointer;
+  justify-content: center;
 }
 
 .card:hover {
@@ -108,34 +109,24 @@ h1 {
   color: #2980b9;
 }
 
-.card-proc {
+.card-proc-ativos {
   background-color: #e6e6fa;
 }
-.card-proc .card-icon svg {
+.card-proc-ativos .card-icon svg {
   color: #8e44ad;
 }
-.card-proc .card-valor {
+.card-proc-ativos .card-valor {
   color: #9b59b6;
 }
 
-.card-prazo {
+.card-novo-proc {
   background-color: #ffe0e0;
 }
-.card-prazo .card-icon svg {
+.card-novo-proc .card-icon svg {
   color: #e74c3c;
 }
-.card-prazo .card-valor {
+.card-novo-proc .card-valor {
   color: #c0392b;
-}
-
-.card-pub {
-  background-color: #fff2e0;
-}
-.card-pub .card-icon svg {
-  color: #f39c12;
-}
-.card-pub .card-valor {
-  color: #e67e22;
 }
 
 .agenda-topico {
@@ -144,7 +135,7 @@ h1 {
   border-left: 5px solid #5b6e82;
   border-radius: 8px;
   padding: 20px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #555;
   margin-top: 20px;
 }
