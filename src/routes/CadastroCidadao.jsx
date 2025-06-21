@@ -165,8 +165,16 @@ const CadastroCidadao = () => {
                 {`${c.logradouro}, ${c.numero}${c.complemento ? ', ' + c.complemento : ''} - ${c.bairro}, ${c.cidade} - ${c.estado}`}
               </td>
               <td>
-                <Button label="Editar" onClick={() => editar(c.id)} />
-                <Button label="Excluir" onClick={() => excluir(c.id)} />
+                 <Button
+                  label="✏️"
+                  onClick={() => editar(c.id)}
+                  className="botao-icone"
+                />
+                <Button
+                  label="❌"
+                  onClick={() => excluir(c.id)}
+                  className="botao-icone"
+                />
               </td>
             </tr>
           ))}
