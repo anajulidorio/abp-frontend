@@ -83,7 +83,9 @@ export default function Consulta() {
                   <td>R$ {parseFloat(proc.valor).toFixed(2)}</td>
                   <td>{proc.situacao}</td>
                   <td>
-                    <button onClick={() => {
+                    <button
+                      className="botao-icone"
+                      onClick={() => {
                         if (proc.arquivo) {
                           const url = URL.createObjectURL(proc.arquivo);
                           window.open(url, '_blank');
@@ -92,7 +94,7 @@ export default function Consulta() {
                         }
                       }}
                     >
-                      Ver PDF
+                      📄
                     </button>
                   </td>
                 </tr>
