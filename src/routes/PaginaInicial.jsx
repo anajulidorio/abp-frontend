@@ -1,18 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../routes/PaginaInicial.css';
+import { useCidadao } from '../contexts/CidadaoContext';
+import { useProcesso } from '../contexts/ProcessoContext';
 
 export default function PaginaInicial() {
-  const [totalCidadaos, setTotalCidadaos] = useState(0);
-  const [processosAtivos, setProcessosAtivos] = useState(0);
-  const [prazosProximos, setPrazosProximos] = useState(0);
-  const [publicacoesHoje, setPublicacoesHoje] = useState(0);
+  const { cidadaos } = useCidadao();
+  const { processos } = useProcesso();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    setTotalCidadaos(5);
-    setProcessosAtivos(14);
-    setPrazosProximos(3);
-    setPublicacoesHoje(2);
-  }, []);
+  const totalCidadaos = cidadaos.length;
+  const processosAtivos = processos.filter(
+    (p) => p.situacao === 'Em andamento' || p.situacao === 'Suspenso'
+  ).length;
+
+  const handleClickCidadaos = () => {
+    navigate('/cadastro-cidadao');
+  };
+
+  const handleClickProcessosCadastro = () => {
+    navigate('/cadastro-processo');
+  };
+
+  const handleClickConsulta = () => {
+    navigate('/consulta');
+  };
 
   return (
     <div className="dashboard">
@@ -21,7 +33,7 @@ export default function PaginaInicial() {
       <div className="info">
         <h2>Informações Gerais</h2>
         <div className="cards-info">
-          <div className="card card-cidad">
+          <div className="card card-cidad" onClick={handleClickCidadaos}>
             <div className="card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,16 +49,17 @@ export default function PaginaInicial() {
               >
                 <path d="M18 21a8 8 0 0 0-16 0" />
                 <circle cx="10" cy="8" r="5" />
-                <path d="M22 20c0 1.33-2.09 3-4 3s-4-1.67-4-3m4-10a4 4 0 0 0-4-4s-4 1.76-4 4"></path>
+                <path d="M22 21a8 8 0 0 0-16 0" />
+                <path d="M16 2.02A5 5 0 0 0 18 8v10a2 2 0 0 0 2 2h3" />
               </svg>
             </div>
             <div className="card-conteudo">
               <span className="card-valor">{totalCidadaos}</span>
-              <span className="card-legenda">Cidadãos Cadastrados</span>
+              <span className="card-legenda">Total de Cidadãos</span>
             </div>
           </div>
 
-          <div className="card card-proc">
+          <div className="card card-proc-ativos" onClick={handleClickConsulta}>
             <div className="card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +73,9 @@ export default function PaginaInicial() {
                 strokeLinejoin="round"
                 className="lucide lucide-folder-open"
               >
-                <path d="M6 14V4a2 2 0 0 1 2-2h4l2 2h4a2 2 0 0 1 2 2v10" />
-                <path d="M2 14h20v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7Z"></path>
+                <path d="M6 10H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H8l-2-2z" />
+                <path d="M10 12v6" />
+                <path d="M13 15h6" />
               </svg>
             </div>
             <div className="card-conteudo">
@@ -70,7 +84,7 @@ export default function PaginaInicial() {
             </div>
           </div>
 
-          <div className="card card-prazo">
+          <div className="card card-novo-proc" onClick={handleClickProcessosCadastro}>
             <div className="card-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,45 +96,18 @@ export default function PaginaInicial() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-calendar-check-2"
+                className="lucide lucide-file-plus"
               >
-                <path d="M21 14V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
-                <path d="M16 2v4" />
-                <path d="M8 2v4" />
-                <path d="M3 10h18" />
-                <path d="m18 22 3-3L22 16" />
-                <path d="m18 16 3 3 1-1"></path>
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                <path d="M9 13h6"/>
+                <path d="M12 10v6"/>
               </svg>
-            </div>
-            <div className="card-conteudo">
-              <span className="card-valor">{prazosProximos}</span>
-              <span className="card-legenda">Prazos Próximos</span>
-            </div>
-          </div>
 
-          <div className="card card-pub">
-            <div className="card-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-book-open-text"
-              >
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                <path d="M10 12H7" />
-                <path d="M14 12h3"></path>
-              </svg>
             </div>
             <div className="card-conteudo">
-              <span className="card-valor">{publicacoesHoje}</span>
-              <span className="card-legenda">Publicações Hoje</span>
+              <span className="card-valor"></span>
+              <span className="card-legenda">Cadastrar Novo Processo</span>
             </div>
           </div>
         </div>
@@ -132,11 +119,8 @@ export default function PaginaInicial() {
           <p>Não há prazos críticos para os próximos 7 dias.</p>
           <p>Últimas 5 movimentações processuais:</p>
           <ul>
-            <li>Processo 2023-001: Publicação de despacho em 18/06/2025.</li>
-            <li>Processo 2023-003: Recebimento de documento em 17/06/2025.</li>
-            <li>
-              Processo 2023-005: Agendamento de audiência para 01/07/2025.
-            </li>
+            <li>Processo 2023-001 - Reunião agendada (18/07/2024)</li>
+            <li>Processo 2023-003 - Documentos recebidos (15/07/2024)</li>
           </ul>
         </div>
       </div>
