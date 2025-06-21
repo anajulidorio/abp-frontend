@@ -28,7 +28,7 @@
 
 .formulario-cidadao,
 .formulario-processo {
-  width: 95%; 
+  width: 95%;
   max-width: 600px;
   margin-bottom: 40px;
   padding: 20px;
@@ -163,8 +163,8 @@
   width: 20%;
 }
 
-.tabela-cidadaos td button,
-.tabela-processos td button {
+.tabela-cidadaos td button:not(.botao-icone),
+.tabela-processos td button:not(.botao-icone) {
   display: block;
   width: 90%;
   margin: 5px auto;
@@ -178,17 +178,24 @@
   transition: background-color 0.2s ease;
 }
 
-.tabela-cidadaos td button:first-child,
-.tabela-processos td button:first-child {
-  margin-top: 0;
-}
-
-.tabela-cidadaos td button:last-child,
-.tabela-processos td button:last-child {
-  margin-bottom: 0;
-}
-
-.tabela-cidadaos td button:hover,
-.tabela-processos td button:hover {
+.tabela-cidadaos td button:not(.botao-icone):hover,
+.tabela-processos td button:not(.botao-icone):hover {
   background-color: #4a5c6d;
+}
+
+.botao-icone {
+  all: unset;
+  cursor: pointer;
+  font-size: 18px;
+  color: #5b6e82;
+  display: inline-block;
+  padding: 0;
+  margin: 0 6px;
+  line-height: 1;
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.botao-icone:hover {
+  color: #4a5c6d;
 }
