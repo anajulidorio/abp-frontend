@@ -1,62 +1,60 @@
-html,
-body {
-  height: 100%;
+.tela-login {
+  height: 100vh;
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #a8d0ff 0%, #d4e9ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-container {
+.tela-login .login-container {
   background-color: white;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-.login-box {
+.tela-login .login-box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login-left {
+.tela-login .login-left {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 24px;
 }
 
-.logo {
+.tela-login .logo {
   width: 36px;
   margin-bottom: 12px;
 }
 
-.login-left h1 {
+.tela-login .login-left h1 {
   font-size: 24px;
   margin: 0;
   color: #2c3e50;
 }
 
-.login-form {
+.tela-login .login-form {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.login-form label {
+.tela-login .login-form label {
   font-weight: bold;
   margin-bottom: 4px;
   color: #2c3e50;
   font-size: 14px;
 }
 
-.input-text {
+.tela-login .input-text {
   width: 100%;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
@@ -68,7 +66,7 @@ body {
   background: white;
 }
 
-.senha-container {
+.tela-login .senha-container {
   display: flex;
   align-items: center;
   width: 100%;
@@ -80,7 +78,7 @@ body {
   background: white;
 }
 
-.senha-container input {
+.tela-login .senha-container input {
   border: none;
   padding: 12px;
   font-size: 14px;
@@ -89,7 +87,7 @@ body {
   border-radius: 8px 0 0 8px;
 }
 
-.olhinho {
+.tela-login .olhinho {
   cursor: pointer;
   font-size: 18px;
   user-select: none;
@@ -97,7 +95,7 @@ body {
   padding-left: 8px;
 }
 
-.login-form button {
+.tela-login .login-form button {
   background-color: #1e1e2f;
   color: white;
   padding: 12px;
@@ -109,6 +107,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.login-form button:hover {
+.tela-login .login-form button:hover {
   background-color: #000000;
 }
