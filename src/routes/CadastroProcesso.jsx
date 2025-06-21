@@ -138,17 +138,16 @@ const CadastroProcesso = () => {
                 <td>R$ {parseFloat(proc.valor).toFixed(2)}</td>
                 <td>{proc.situacao}</td>
                 <td>
-                  <Button label="Editar" onClick={() => editar(i)} />
-                  <Button label="Excluir" onClick={() => excluir(i)} />
-                  <Button label="Ver PDF" onClick={() => {
-                      if (proc.arquivo) {
+                <Button label="✏️" onClick={() => editar(i)} className="botao-icone" />
+                <Button label="❌" onClick={() => excluir(i)} className="botao-icone" />
+                <Button label="📄" onClick={() => {
+                    if (proc.arquivo) {
                         const url = URL.createObjectURL(proc.arquivo);
                         window.open(url, '_blank');
-                      } else {
-                        alert('Nenhum arquivo disponível.');
-                      }
-                    }}
-                  />
+                    } else {
+                      alert('Nenhum arquivo disponível.');
+                    }
+                    }} className="botao-icone" />
                 </td>
               </tr>
             );
