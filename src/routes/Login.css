@@ -27,12 +27,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 }
 
 .tela-login .logo {
-  width: 36px;
-  margin-bottom: 12px;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  margin-top: 0;
 }
 
 .tela-login .login-left h1 {
@@ -49,7 +51,6 @@
 
 .tela-login .login-form label {
   font-weight: bold;
-  margin-bottom: 4px;
   color: #2c3e50;
   font-size: 14px;
 }
