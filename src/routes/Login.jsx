@@ -4,6 +4,7 @@ import '../routes/Login.css';
 function Login({ aoAvancar }) {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,15 +33,28 @@ function Login({ aoAvancar }) {
             type="text"
             placeholder="Digite seu login..."
             value={login}
-            onChange={(e) => setLogin(e.target.value)} required
+            onChange={(e) => setLogin(e.target.value)}
+            required
+            className="input-text"
           />
+
           <label>Senha:</label>
-          <input
-            type="password"
-            placeholder="Digite sua senha..."
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)} required
-          />
+          <div className="senha-container">
+            <input
+              type={mostrarSenha ? 'text' : 'password'}
+              placeholder="Digite sua senha..."
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+            <span
+              onClick={() => setMostrarSenha(!mostrarSenha)}
+              className="olhinho"
+              title={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}
+            >
+              {mostrarSenha ? '👁️' : '👁️'}
+            </span>
+          </div>
           <button type="submit">AVANÇAR</button>
         </form>
       </div>
