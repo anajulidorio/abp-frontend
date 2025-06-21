@@ -22,8 +22,8 @@ function Login({ aoAvancar }) {
         <div className="login-box">
           <div className="login-left">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Justitia.svg/1200px-Justitia.svg.png"
-              alt="Logo"
+              src="/logo-fiscallis.png"
+              alt="Logo Fiscallis"
               className="logo"
             />
             <h1>Fazer login</h1>
