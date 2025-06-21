@@ -8,6 +8,9 @@ import CadastroCidadao from './routes/CadastroCidadao';
 import CadastroProcesso from './routes/CadastroProcesso';
 import Consulta from './routes/Consulta';
 
+import { CidadaoProvider } from './contexts/CidadaoContext';
+import { ProcessoProvider } from './contexts/ProcessoContext';
+
 export default function App() {
   const [mostrarLogin, setMostrarLogin] = useState(true);
 
@@ -40,5 +43,11 @@ export default function App() {
     return <Login aoAvancar={aoAvancar} />;
   }
 
-  return <RouterProvider router={roteador} />;
+  return (
+    <CidadaoProvider>
+      <ProcessoProvider>
+        <RouterProvider router={roteador} />
+      </ProcessoProvider>
+    </CidadaoProvider>
+  );
 }
