@@ -1,58 +1,20 @@
 import React, { useState } from 'react';
 import '../routes/Consulta.css';
+import { useProcesso } from '../contexts/ProcessoContext';
+import { useCidadao } from '../contexts/CidadaoContext';
 
 export default function Consulta() {
   const [textoBusca, setTextoBusca] = useState('');
   const [statusSelecionado, setStatusSelecionado] = useState('Todos');
 
-  const contribuintes = [
-    { id: 1, nome: 'João Silva' },
-    { id: 2, nome: 'Maria Santos' },
-    { id: 3, nome: 'Pedro Oliveira' },
-    { id: 4, nome: 'Ana Pereira' },
-    { id: 5, nome: 'Carlos Eduardo' },
-    { id: 6, nome: 'Fernanda Lima' },
-  ];
-
-  const processos = [
-    {
-      contribuinteId: '1',
-      numero: '2023-001',
-      valor: '1500',
-      situacao: 'Em andamento',
-    },
-    {
-      contribuinteId: '2',
-      numero: '2023-002',
-      valor: '3000',
-      situacao: 'Concluído',
-    },
-    {
-      contribuinteId: '4',
-      numero: '2023-003',
-      valor: '2200',
-      situacao: 'Suspenso',
-    },
-    {
-      contribuinteId: '5',
-      numero: '2023-004',
-      valor: '1800',
-      situacao: 'Em andamento',
-    },
-    {
-      contribuinteId: '6',
-      numero: '2023-005',
-      valor: '2500',
-      situacao: 'Concluído',
-    },
-  ];
+  const { processos } = useProcesso();
+  const { cidadaos } = useCidadao();
 
   const statusDisponiveis = ['Todos', 'Em andamento', 'Concluído', 'Suspenso'];
 
   const listaFiltrada = processos.filter((proc) => {
-    const contribuinte = contribuintes.find(
-      (c) => c.id.toString() === proc.contribuinteId
-    );
+    const contribuinte = cidadaos.find(c => c.id === proc.contribuinteId);
+
     const nomeContribuinte = contribuinte
       ? contribuinte.nome.toLowerCase()
       : '';
@@ -101,24 +63,38 @@ export default function Consulta() {
             <th>Número</th>
             <th>Valor</th>
             <th>Situação</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
           {listaFiltrada.length === 0 ? (
             <tr>
-              <td colSpan="4">Nenhum processo encontrado.</td>
+              <td colSpan="5" style={{ textAlign: 'center', padding: '20px' }}>
+                Nenhum processo encontrado.
+              </td>
             </tr>
           ) : (
             listaFiltrada.map((proc, i) => {
-              const pessoa = contribuintes.find(
-                (c) => c.id.toString() === proc.contribuinteId
-              );
+              const pessoa = cidadaos.find(c => c.id === proc.contribuinteId);
               return (
                 <tr key={i}>
                   <td>{pessoa ? pessoa.nome : '-'}</td>
                   <td>{proc.numero}</td>
                   <td>R$ {parseFloat(proc.valor).toFixed(2)}</td>
                   <td>{proc.situacao}</td>
+                  <td>
+                    <button onClick={() => {
+                        if (proc.arquivo) {
+                          const url = URL.createObjectURL(proc.arquivo);
+                          window.open(url, '_blank');
+                        } else {
+                          alert('Nenhum arquivo disponível.');
+                        }
+                      }}
+                    >
+                      Ver PDF
+                    </button>
+                  </td>
                 </tr>
               );
             })
