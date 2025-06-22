@@ -24,7 +24,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
-  background-color: #f0f2f5;
+  background-color: #fbfbfb;
   color: #213547;
   font-family: 'Montserrat', sans-serif;
 }
@@ -53,18 +53,21 @@ button {
   font-size: 16px;
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
-  background-color: #1a1a1a;
+  background-color: #003366;
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #004080;
+  background-color: #004080;
 }
 
 button:focus,
 button:focus-visible {
   outline: 4px auto;
+  outline-color: #003366;
 }
 
 @media (prefers-color-scheme: light) {
@@ -95,7 +98,7 @@ button:focus-visible {
 }
 
 .menu {
-  background-color: #e6e6e6;
+  background-color: #213547;
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -111,13 +114,12 @@ button:focus-visible {
 
 .menu a {
   text-decoration: none;
-  color: #444;
+  color: rgb(234, 217, 217);
   padding: 10px 15px;
   border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
 }
 
 .menu a:hover {
-  background-color: #dcdcdc;
-  color: #222;
+  background-color: #304e67;
+  color: rgb(234, 217, 217);
 }
