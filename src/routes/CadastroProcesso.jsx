@@ -99,7 +99,7 @@ const CadastroProcesso = () => {
             ))}
           </select>
           <Input className="campo-formulario" name="numero" placeholder="Número do processo" value={processo.numero} onChange={handleAlterar} required/>
-          <Input className="campo-formulario" name="valor" type="number"  placeholder="Valor (R$)" value={processo.valor} onChange={handleAlterar} required/>
+          <Input className="campo-formulario" name="valor" type="number"  placeholder="Valor da dívida (R$)" value={processo.valor} onChange={handleAlterar} required/>
           <select className="campo-formulario" name="situacao" value={processo.situacao} onChange={handleAlterar} required>
             <option value="">Selecione a situação</option>
             <option value="Em andamento">Em andamento</option>
