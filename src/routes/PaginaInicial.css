@@ -92,6 +92,7 @@ h1 {
   font-weight: 700;
   color: #2c3e50;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .card-legenda {
@@ -117,6 +118,16 @@ h1 {
 }
 .card-proc-ativos .card-valor {
   color: #9b59b6;
+}
+
+.card-total-receber {
+  background-color: #e6fff5;
+}
+.card-total-receber .card-icon svg {
+  color: #2ecc71;
+}
+.card-total-receber .card-valor {
+  color: #27ae60;
 }
 
 .card-novo-proc {
