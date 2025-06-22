@@ -50,7 +50,10 @@ const CadastroCidadao = () => {
     }
 
     if (cidadaoEmEdicao) {
-      editarCidadaoContext(cidadaoEmEdicao.id, { ...cidadao, id: cidadaoEmEdicao.id });
+      editarCidadaoContext(cidadaoEmEdicao.id, {
+        ...cidadao,
+        id: cidadaoEmEdicao.id,
+      });
       window.alert('Cidadão editado com sucesso!');
     } else {
       adicionarCidadao(cidadao);
@@ -63,7 +66,7 @@ const CadastroCidadao = () => {
   }
 
   function editar(id) {
-    const cidadaoParaEditar = cidadaos.find(c => c.id === id);
+    const cidadaoParaEditar = cidadaos.find((c) => c.id === id);
     if (cidadaoParaEditar) {
       setCidadao(cidadaoParaEditar);
       setCidadaoEmEdicao(cidadaoParaEditar);
@@ -82,28 +85,29 @@ const CadastroCidadao = () => {
     <div className="pagina-cadastro">
       <h1 className="titulo-cadastro">Cadastro de Cidadãos</h1>
 
-      <div className="botao-novo-cidadao">
+      <div>
         <Button label={mostrarFormulario ? 'Cancelar' : 'Novo Cidadão'} onClick={() => {
             setMostrarFormulario(!mostrarFormulario);
             setCidadao(CidadaoInicial);
             setCidadaoEmEdicao(null);
           }}
-        />
+          className="botao-novo-cidadao"
+          />
       </div>
 
       {mostrarFormulario && (
         <form onSubmit={salvar} className="formulario-cidadao">
-          <Input name="nome" placeholder="Nome completo" value={cidadao.nome} onChange={handleAlterar} required />
-          <Input name="cpf" placeholder="CPF" value={cidadao.cpf} onChange={handleAlterar} required />
-          <Input name="dataNascimento" type="date" value={cidadao.dataNascimento} onChange={handleAlterar} required />
-          <Input name="email" type="email" placeholder="Email" value={cidadao.email} onChange={handleAlterar} required />
-          <Input name="telefone" placeholder="Telefone" value={cidadao.telefone} onChange={handleAlterar} />
-          <Input name="ocupacao" placeholder="Ocupação" value={cidadao.ocupacao} onChange={handleAlterar} required />
-          <Input name="logradouro" placeholder="Logradouro" value={cidadao.logradouro} onChange={handleAlterar} required />
-          <Input name="numero" placeholder="Número" value={cidadao.numero} onChange={handleAlterar} required />
-          <Input name="complemento" placeholder="Complemento" value={cidadao.complemento} onChange={handleAlterar} />
-          <Input name="bairro" placeholder="Bairro" value={cidadao.bairro} onChange={handleAlterar} required />
-          <Input name="cidade" placeholder="Cidade" value={cidadao.cidade} onChange={handleAlterar} required />
+          <Input name="nome" placeholder="Nome completo" value={cidadao.nome} onChange={handleAlterar} required/>
+          <Input name="cpf" placeholder="CPF" value={cidadao.cpf} onChange={handleAlterar} required/>
+          <Input name="dataNascimento" type="date" value={cidadao.dataNascimento} onChange={handleAlterar} required/>
+          <Input name="email" type="email" placeholder="Email" value={cidadao.email} onChange={handleAlterar} required/>
+          <Input name="telefone" placeholder="Telefone" value={cidadao.telefone} onChange={handleAlterar}/>
+          <Input name="ocupacao" placeholder="Ocupação" value={cidadao.ocupacao} onChange={handleAlterar} required/>
+          <Input name="logradouro" placeholder="Logradouro" value={cidadao.logradouro} onChange={handleAlterar} required/>
+          <Input name="numero" placeholder="Número" value={cidadao.numero} onChange={handleAlterar} required/>
+          <Input name="complemento" placeholder="Complemento" value={cidadao.complemento} onChange={handleAlterar}/>
+          <Input name="bairro" placeholder="Bairro" value={cidadao.bairro} onChange={handleAlterar} required/>
+          <Input name="cidade" placeholder="Cidade" value={cidadao.cidade} onChange={handleAlterar} required/>
           <select name="estado" value={cidadao.estado} onChange={handleAlterar} required className="campo-formulario">
             <option value="">Selecione o Estado</option>
             <option value="AC">Acre</option>
@@ -134,7 +138,7 @@ const CadastroCidadao = () => {
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantins</option>
           </select>
-          <Button type="submit" label={cidadaoEmEdicao ? 'Salvar Edição' : 'Salvar Cidadão'} />
+          <Button type="submit" label={cidadaoEmEdicao ? 'Salvar Edição' : 'Salvar Cidadão'} className="botao-novo-cidadao"/>
         </form>
       )}
 
@@ -162,11 +166,13 @@ const CadastroCidadao = () => {
               <td>{c.telefone}</td>
               <td>{c.ocupacao}</td>
               <td>
-                {`${c.logradouro}, ${c.numero}${c.complemento ? ', ' + c.complemento : ''} - ${c.bairro}, ${c.cidade} - ${c.estado}`}
+                {`${c.logradouro}, ${c.numero}${
+                  c.complemento ? ', ' + c.complemento : ''
+                } - ${c.bairro}, ${c.cidade} - ${c.estado}`}
               </td>
               <td>
-                 <Button
-                  label="✏️"
+                <Button
+                 label="✏️"
                   onClick={() => editar(c.id)}
                   className="botao-icone"
                 />
