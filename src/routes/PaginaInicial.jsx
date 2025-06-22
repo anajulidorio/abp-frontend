@@ -10,9 +10,18 @@ export default function PaginaInicial() {
   const navigate = useNavigate();
 
   const totalCidadaos = cidadaos.length;
+  
   const processosAtivos = processos.filter(
     (p) => p.situacao === 'Em andamento' || p.situacao === 'Suspenso'
   ).length;
+
+  const totalReceber = processos
+    .filter((p) => p.situacao !== 'Concluído')
+    .reduce((acc, processo) => {
+      const valor = parseFloat(processo.valor);
+      if (isNaN(valor)) return acc;
+      return acc + valor;
+    }, 0);
 
   const handleClickCidadaos = () => {
     navigate('/cadastro-cidadao');
@@ -32,6 +41,7 @@ export default function PaginaInicial() {
 
       <div className="info">
         <h2>Informações Gerais</h2>
+        
         <div className="cards-info">
           <div className="card card-cidad" onClick={handleClickCidadaos}>
             <div className="card-icon">
@@ -84,6 +94,32 @@ export default function PaginaInicial() {
             </div>
           </div>
 
+          <div className="card card-total-receber" onClick={handleClickConsulta}>
+            <div className="card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-dollar-sign"
+              >
+                <line x1="12" x2="12" y1="2" y2="22" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <div className="card-conteudo">
+              <span className="card-valor"> R${' '}
+                {totalReceber.toLocaleString('pt-BR', { minimumFractionDigits: 2,})}
+              </span>
+              <span className="card-legenda">Total a Receber</span>
+            </div>
+          </div>
+
           <div className="card card-novo-proc" onClick={handleClickProcessosCadastro}>
             <div className="card-icon">
               <svg
@@ -103,7 +139,6 @@ export default function PaginaInicial() {
                 <path d="M9 13h6"/>
                 <path d="M12 10v6"/>
               </svg>
-
             </div>
             <div className="card-conteudo">
               <span className="card-valor"></span>
