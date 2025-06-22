@@ -32,7 +32,6 @@ const CadastroProcesso = () => {
 
   function salvar(e) {
     e.preventDefault();
-
     if (
       processos.some(
         (p, i) => p.numero === processo.numero && i !== indiceEdicao
@@ -43,7 +42,6 @@ const CadastroProcesso = () => {
     }
 
     const novoProcesso = { ...processo, arquivo };
-
     if (indiceEdicao !== null) {
       editarProcessoContext(indiceEdicao, novoProcesso);
       alert('Processo editado com sucesso!');
@@ -74,8 +72,7 @@ const CadastroProcesso = () => {
   return (
     <div className="pagina-processo">
       <h1 className="titulo-processo">Cadastro de Processos</h1>
-
-      <div className="botao-novo-processo">
+      <div>
         <Button label={mostrarFormulario ? 'Cancelar' : 'Novo Processo'} onClick={() => {
             setMostrarFormulario(!mostrarFormulario);
             setProcesso({
@@ -87,6 +84,7 @@ const CadastroProcesso = () => {
             setArquivo(null);
             setIndiceEdicao(null);
           }}
+          className="botao-novo-processo"
         />
       </div>
 
@@ -100,20 +98,16 @@ const CadastroProcesso = () => {
               </option>
             ))}
           </select>
-
           <Input className="campo-formulario" name="numero" placeholder="Número do processo" value={processo.numero} onChange={handleAlterar} required/>
           <Input className="campo-formulario" name="valor" type="number"  placeholder="Valor (R$)" value={processo.valor} onChange={handleAlterar} required/>
-
           <select className="campo-formulario" name="situacao" value={processo.situacao} onChange={handleAlterar} required>
             <option value="">Selecione a situação</option>
             <option value="Em andamento">Em andamento</option>
             <option value="Concluído">Concluído</option>
             <option value="Suspenso">Suspenso</option>
           </select>
-
           <input type="file" accept="application/pdf" className="campo-formulario" onChange={(e) => setArquivo(e.target.files[0])}/>
-
-          <Button type="submit" label={indiceEdicao !== null ? 'Salvar Edição' : 'Salvar Processo'}/>
+          <Button type="submit" label={indiceEdicao !== null ? 'Salvar Edição' : 'Salvar Processo'} className="botao-novo-processo"/>
         </form>
       )}
 
