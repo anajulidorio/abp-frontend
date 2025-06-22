@@ -16,7 +16,7 @@ const gerarCidadaosIniciaisComId = (baseId = 1) => {
       complemento: 'Apto 101',
       bairro: 'Centro',
       cidade: 'Forquilhinha',
-      estado: 'SP',
+      estado: 'SC',
     },
     {
       nome: 'Maria Santos',
@@ -30,7 +30,7 @@ const gerarCidadaosIniciaisComId = (baseId = 1) => {
       complemento: '',
       bairro: 'Vila Lurdes',
       cidade: 'Forquilhinha',
-      estado: 'RJ',
+      estado: 'SC',
     },
     {
       nome: 'Pedro Oliveira',
@@ -44,7 +44,7 @@ const gerarCidadaosIniciaisComId = (baseId = 1) => {
       complemento: 'Casa',
       bairro: 'Ouro Negro',
       cidade: 'Forquilhinha',
-      estado: 'MG',
+      estado: 'SC',
     },
     {
       nome: 'Ana Pereira',
@@ -58,7 +58,7 @@ const gerarCidadaosIniciaisComId = (baseId = 1) => {
       complemento: '',
       bairro: 'Vila Franca',
       cidade: 'Forquilhinha',
-      estado: 'PR',
+      estado: 'SC',
     },
     {
       nome: 'Carlos Eduardo Vieira',
@@ -72,7 +72,7 @@ const gerarCidadaosIniciaisComId = (baseId = 1) => {
       complemento: 'Bloco A, Apto 202',
       bairro: 'Santa Líbera',
       cidade: 'Forquilhinha',
-      estado: 'RS',
+      estado: 'SC',
     },
   ];
 
