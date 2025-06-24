@@ -3,10 +3,8 @@
 ## Equipe:
 * Ana Julia Lidório
 * Ana Paula Gesser
-* Gabriel Rocha
 * Lara Donsossola
-* Keler Hahn
-
+  
 ## O que é o Fiscallis?
 O Fiscallis é um site especializado no controle de processos jurídicos relacionados a dívidas de impostos dos cidadãos inadimplentes. Em palavras simples, quando uma pessoa não paga o IPTU (imposto do imóvel) ou outros impostos municipais, a prefeitura precisa iniciar um processo de cobrança. Nosso sistema ajuda a organizar e acompanhar todos esses processos.
 
