@@ -59,8 +59,6 @@ export default function PaginaInicial() {
               >
                 <path d="M18 21a8 8 0 0 0-16 0" />
                 <circle cx="10" cy="8" r="5" />
-                <path d="M22 21a8 8 0 0 0-16 0" />
-                <path d="M16 2.02A5 5 0 0 0 18 8v10a2 2 0 0 0 2 2h3" />
               </svg>
             </div>
             <div className="card-conteudo">
