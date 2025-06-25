@@ -40,3 +40,6 @@ O Fiscallis foi desenvolvido especificamente para atender às necessidades das p
 Enquanto muitos sistemas são feitos para uso pessoal ou empresarial, o nosso é totalmente adaptado para o setor público municipal, considerando as regras específicas de cobrança de impostos e as necessidades dos advogados públicos.
 
 Isso significa que prefeituras podem trabalhar de forma mais organizada e segura, recuperar valores devidos com maior eficiência e oferecer um serviço mais transparente para os cidadãos.
+
+## Slides
+Você pode acessar nossa apresentação pelo link: [ Apresentação Fiscallis ](https://www.canva.com/design/DAGrFVWNOUg/v2ZR3R9h04q7yZRY_29L2Q/edit?utm_content=DAGrFVWNOUg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
